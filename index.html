@@ -1,56 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IAOA - Irene Apartment Owners Association</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resident Welfare Association</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>IAOA - Irene Apartment Owners Association</h1>
+    <h1>Resident Welfare Association</h1>
     <nav>
       <ul>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#notices">Notices</a></li>
+        <li><a href="#residents">Residents</a></li>
+        <li><a href="#maintenance">Maintenance</a></li>
+        <li><a href="#complaints">Complaints</a></li>
         <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#documents">Documents</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About IAOA</h2>
-    <p>We are the official association of residents of Paras Irene, working together to improve our community and address resident concerns.</p>
-  </section>
+  <main>
+    <section id="home">
+      <h2>Welcome to Our Community</h2>
+      <p>Stay informed and connected with the latest from your Resident Welfare Association.</p>
+    </section>
 
-  <section id="notices">
-    <h2>Recent Notices</h2>
-    <ul id="notices-list">
-      <li>Water supply maintenance on 5th May, 10 AM - 1 PM</li>
-      <li>Monthly GBM on 10th May, 6 PM</li>
-    </ul>
-  </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Our mission is to ensure a safe and harmonious living environment for all residents.</p>
+    </section>
 
-  <section id="events">
-    <h2>Upcoming Events</h2>
-    <p>Holi Celebration on 14th March, 9 AM onwards at Clubhouse Lawn.</p>
-  </section>
+    <section id="notices">
+      <h2>Notices & Announcements</h2>
+      <ul id="notice-list"></ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <section id="residents">
+      <h2>Resident Directory</h2>
+      <p>Access restricted to logged-in users.</p>
+    </section>
+
+    <section id="maintenance">
+      <h2>Maintenance & Dues</h2>
+      <p>Check your dues and pay online (feature coming soon).</p>
+    </section>
+
+    <section id="complaints">
+      <h2>Complaints & Requests</h2>
+      <form id="complaint-form">
+        <input type="text" placeholder="Your Name" required><br>
+        <textarea placeholder="Your Complaint" required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="events">
+      <h2>Events & Gallery</h2>
+      <p>Details of upcoming events will be displayed here.</p>
+    </section>
+
+    <section id="documents">
+      <h2>Documents & Downloads</h2>
+      <ul>
+        <li><a href="#">Society Bylaws (PDF)</a></li>
+        <li><a href="#">Meeting Minutes</a></li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 IAOA - Irene Apartment Owners Association</p>
+    <p>&copy; 2025 Resident Welfare Association. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('complaint-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Complaint submitted successfully!');
+      this.reset();
+    });
+
+    const notices = [
+      "Water tank cleaning on May 3rd.",
+      "RWA meeting scheduled for May 7th, 5 PM.",
+      "Garbage collection timing revised to 8 AM."
+    ];
+
+    const noticeList = document.getElementById('notice-list');
+    notices.forEach(notice => {
+      const li = document.createElement('li');
+      li.textContent = notice;
+      noticeList.appendChild(li);
+    });
+  </script>
 </body>
 </html>
